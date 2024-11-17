@@ -11,16 +11,6 @@ html, body {
   position: relative;
 }
 
-#map {
-  flex-grow: 1;
-  height: 100%;
-}
-
-.map {
-  width: 100%;
-  height: 100%;
-}
-
 .footer {
   position: fixed;
   bottom: 0;
@@ -44,6 +34,17 @@ html, body {
   font-size: 12px;
 }
 
+
+#map {
+  flex-grow: 1;
+  height: 100%;
+}
+
+.map {
+  width: 100%;
+  height: 100%;
+}
+
 .search-container {
   position: relative; /* Utilisez fixed pour qu'elle reste en place */
   top: 15px; /* Ajustez la position du haut */
@@ -54,8 +55,11 @@ html, body {
 }
 
 #pac-input {
+  height: 50px; /* Ajustez la hauteur selon vos besoins */
   max-width: 180px; /* Limite la largeur maximale */
+  font-size: 16px; /* Ajustez la taille de la police selon vos besoins */
   margin: 0 auto; /* Centre horizontalement */
+
 }
 
 .controls {
@@ -228,4 +232,51 @@ html, body {
 
 .info-window-content .favorite-link:hover {
   text-decoration: underline;
+}
+
+#photo-container {
+  position: relative;
+  text-align: center;
+}
+
+#photo-container img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+#photo-container button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+#prev-photo {
+  left: 0;
+}
+
+#next-photo {
+  right: 0;
+}
+
+.custom-btn {
+  background-color: #b892f7;
+  color: white;
+  font-size: 1.5rem;
+  padding: 1rem;
+  border-radius: 10px;
+  border: none;
+}
+
+.custom-btn:hover {
+  background-color: #a078e8;
+  color: white;
 }
