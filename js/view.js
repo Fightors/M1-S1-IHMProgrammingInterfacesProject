@@ -186,4 +186,13 @@ class View {
       this.favorites.add(marker);
     }
   }
+  renderAboutPage() {
+    document.getElementById('about-section').style.display = 'block';
+    document.getElementById('contact-section').style.display = 'none';
+  }
+
+  renderContactPage() {
+    document.getElementById('about-section').style.display = 'none';
+    document.getElementById('contact-section').style.display = 'block';
+  }
 }

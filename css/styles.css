@@ -229,3 +229,17 @@ html, body {
 .info-window-content .favorite-link:hover {
   text-decoration: underline;
 }
+
+.custom-btn {
+  background-color: #b892f7;
+  color: white;
+  font-size: 1.5rem;
+  padding: 1rem;
+  border-radius: 10px;
+  border: none;
+}
+
+.custom-btn:hover {
+  background-color: #a078e8;
+  color: white;
+}

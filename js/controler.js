@@ -4,4 +4,11 @@ class Controler {
     this.model = model;
     this.view.initMap();
   }
+  showAboutPage() {
+    this.view.renderAboutPage();
+  }
+
+  showContactPage() {
+    this.view.renderContactPage();
+  }
 }
