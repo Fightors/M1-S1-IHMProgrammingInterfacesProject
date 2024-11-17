@@ -11,27 +11,26 @@
     <script defer src="js/utils.js"></script>
     <script defer src="js/model.js"></script>
     <script defer src="js/view.js"></script> 
-    <script defer src="js/controler.js"></script>
+    <script defer src="js/controller.js"></script>
     <script defer src="js/main.js"></script>
     <script defer src="js/footer.js"></script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAjWw0WvtxAByeWXHtOIphSHOJsH2iFcXk&libraries=places&callback=initMap"></script>
   </head>
+
   <body>
-    <div id="outer" class="d-flex flex-column h-100">
-      <div id="map" class="map flex-grow-1"></div>
-      <div class="search-wrapper">
-        <div class="search-container">
-          <input id="pac-input" class="controls" type="text" placeholder="Search Box">
-        </div>
+    <div id="map" class="map flex-grow-1"></div>
+    <div class="search-wrapper">
+      <div class="search-container">
+        <input id="pac-input" class="controls" type="text" placeholder="Trouver un spot !">
       </div>
     </div>
     <div id="spot-form-container" style="display: none;">
       <form id="spot-form">
-        <span id="close-form" style="cursor: pointer; position: absolute; top: 10px; right: 10px;">&times;</span>
+        <span id="close-form">&times;</span>
         <label for="spot-name">Nom du spot:</label>
         <input type="text" id="spot-name" name="spot-name" required>
-        <label for="spot-photo">Photo URL:</label>
-        <input type="text" id="spot-photo" name="spot-photo" required>
+        <label for="spot-photos">Photos (max 10):</label>
+        <input type="file" id="spot-photos" name="spot-photos" accept="image/*" multiple required>
         <label for="spot-description">Description:</label>
         <textarea id="spot-description" name="spot-description" required></textarea>
         <label for="spot-rating">Note:</label>
