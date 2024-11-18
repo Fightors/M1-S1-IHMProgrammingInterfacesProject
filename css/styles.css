@@ -275,8 +275,30 @@ html, body {
   border-radius: 10px;
   border: none;
 }
-
 .custom-btn:hover {
-  background-color: #a078e8;
-  color: white;
+  background-color: yellow;
+}
+
+.green-icon {
+  color: green;
+  font-size: 2rem;
+  cursor: pointer;
+}
+.orange-icon {
+  color: orange;
+  font-size: 2rem;
+  cursor: pointer;
+}
+.red-icon {
+  color: red;
+  font-size: 2rem;
+  cursor: pointer;
+}
+.green-icon.active, .orange-icon.active, .red-icon.active {
+  transform: scale(1.2);
+  opacity: 1;
+}
+i {
+  opacity: 0.5;
+  transition: transform 0.3s, opacity 0.3s;
 }

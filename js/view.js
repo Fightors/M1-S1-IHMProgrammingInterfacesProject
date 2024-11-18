@@ -97,4 +97,19 @@ class View {
     document.getElementById('about-section').style.display = 'none';
     document.getElementById('contact-section').style.display = 'block';
   }
+  addFeedbackListener() {
+    const feedbackIcons = document.querySelectorAll('#feedback-section i');
+  
+    feedbackIcons.forEach(icon => {
+      icon.addEventListener('click', () => {
+        feedbackIcons.forEach(i => i.classList.remove('active'));
+        icon.classList.add('active');
+  
+        // Sauvegarder dans le modèle
+        const feedback = icon.getAttribute('data-feedback');
+        this.model.setFeedback(feedback);
+      });
+    });
+  }
+  
 }

@@ -2,6 +2,7 @@ class Model {
     constructor() {
       this.markers = [];
       this.favorites = new Set();
+      this.feedback = null;
     }
   
     addMarker(marker) {
@@ -26,5 +27,15 @@ class Model {
   
     setRating(marker, rating) {
       marker.rating = rating;
+    }
+
+    setFeedback(feedback) {
+      this.feedback = feedback;
+      console.log(`Feedback sélectionné : ${feedback}`);
+      // Vous pouvez sauvegarder cela dans une base de données ou un localStorage
+    }
+  
+    getFeedback() {
+      return this.feedback;
     }
   }
