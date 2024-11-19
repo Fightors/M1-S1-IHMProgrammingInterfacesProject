@@ -27,8 +27,6 @@ class Controller {
 
     this.view.form.onsubmit = (e) => this.onFormSubmit(e);
     this.view.initStarRating();
-    
-    this.view.addFeedbackListener();
   }
 
   onPlacesChanged() {
@@ -129,20 +127,4 @@ class Controller {
       reader.readAsDataURL(photos[i]);
     }
   }
-
-  showAboutPage() {
-    this.view.renderAboutPage();
-  }
-
-  showContactPage() {
-    this.view.renderContactPage();
-  }
-  renderAboutPage() {
-    document.getElementById('about-section').style.display = 'block';
-    document.getElementById('contact-section').style.display = 'none';
-  
-    // Ajouter la gestion des clics sur les icônes
-    this.view.addFeedbackListener();
-  }
-  
 }

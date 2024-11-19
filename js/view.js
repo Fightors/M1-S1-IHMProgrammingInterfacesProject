@@ -1,5 +1,6 @@
 class View {
-  constructor() {
+  constructor(model) {
+    this.model = model;
     this.mapElement = document.getElementById('map');
     this.searchBoxElement = document.getElementById('pac-input');
     this.formContainer = document.getElementById('spot-form-container');
@@ -86,30 +87,6 @@ class View {
     for (let i = 0; i < rating; i++) {
       this.starRatingElements[i].classList.add('checked');
     }
-  }
-
-  renderAboutPage() {
-    document.getElementById('about-section').style.display = 'block';
-    document.getElementById('contact-section').style.display = 'none';
-  }
-
-  renderContactPage() {
-    document.getElementById('about-section').style.display = 'none';
-    document.getElementById('contact-section').style.display = 'block';
-  }
-  addFeedbackListener() {
-    const feedbackIcons = document.querySelectorAll('#feedback-section i');
-  
-    feedbackIcons.forEach(icon => {
-      icon.addEventListener('click', () => {
-        feedbackIcons.forEach(i => i.classList.remove('active'));
-        icon.classList.add('active');
-  
-        // Sauvegarder dans le modèle
-        const feedback = icon.getAttribute('data-feedback');
-        this.model.setFeedback(feedback);
-      });
-    });
   }
   
 }
