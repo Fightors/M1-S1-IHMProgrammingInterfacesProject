@@ -302,19 +302,16 @@ i {
   opacity: 0.5;
   transition: transform 0.3s, opacity 0.3s;
 }
+.feedback-btn.active {
+  opacity: 1;
+  transform: scale(1.1);
+}
 
-@media (max-width: 767px) {
-  #feedback-section {
-    padding: 10px;
-    text-align: center;
-  }
+.feedback-btn {
+  opacity: 0.5;
+  transition: opacity 0.3s, transform 0.3s;
+}
 
-  #feedback-section .d-flex {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  #feedback-section i {
-    margin-bottom: 10px;
-  }
+.transparent {
+  opacity: 0.5;
 }
