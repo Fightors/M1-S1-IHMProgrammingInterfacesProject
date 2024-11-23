@@ -315,3 +315,30 @@ i {
 .transparent {
   opacity: 0.5;
 }
+
+.carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.5); /* Fond semi-transparent */
+    border-radius: 50%; /* Forme ronde */
+    width: 50px; /* Largeur de l'icône */
+    height: 50px; /* Hauteur de l'icône */
+  }
+
+
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: 5%; /* Largeur des zones cliquables */
+  }
+
+  .fa-star {
+    color: #ccc; /* Couleur des étoiles non cochées */
+  }
+  .fa-star.checked {
+    color: #ffcc00; /* Couleur des étoiles cochées */
+  }
+
+  .spot-description,
+  .spot-rating {
+    font-size: 1.2em; /* Augmente la taille de la police */
+    font-weight: bold; /* Met le texte en gras */
+  }

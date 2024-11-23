@@ -87,15 +87,12 @@ class Controller {
   onFormSubmit(e) {
     e.preventDefault();
     const { name, photos, description, rating } = this.view.getFormData();
-
     if (photos.length > 10) {
       alert('Vous pouvez sélectionner jusqu\'à 10 photos.');
       return;
     }
-
     const photoUrls = [];
     let photosLoaded = 0;
-
     for (let i = 0; i < photos.length; i++) {
       const reader = new FileReader();
       reader.onload = (event) => {
@@ -105,19 +102,18 @@ class Controller {
           const infoWindow = new google.maps.InfoWindow({
             content: this.view.getInfoWindowContent(name, photoUrls, description, rating, this.model.isFavorite(this.currentMarker))
           });
-
           this.currentMarker.addListener('click', () => {
             infoWindow.open(this.map, this.currentMarker);
-            document.querySelector('.favorite-link').addEventListener('click', (e) => {
+            const favoriteButton = document.querySelector('.favorite-link');
+            favoriteButton.addEventListener('click', (e) => {
               e.preventDefault();
               this.model.toggleFavorite(this.currentMarker);
-              infoWindow.setContent(this.view.getInfoWindowContent(name, photoUrls, description, rating, this.model.isFavorite(this.currentMarker)));
-              alert(this.model.isFavorite(this.currentMarker) ? 'Spot ajouté aux favoris' : 'Spot retiré des favoris');
+              const isFavorite = this.model.isFavorite(this.currentMarker);
+              favoriteButton.textContent = isFavorite ? 'Supprimer de mes favoris' : 'Ajouter à mes favoris';
+              alert(isFavorite ? 'Spot ajouté à vos favoris' : 'Spot retiré de vos favoris');
+              infoWindow.setContent(this.view.getInfoWindowContent(name, photoUrls, description, rating, isFavorite));
             });
-
-            this.view.initPhotoCarousel(photoUrls);
           });
-
           this.model.setRating(this.currentMarker, rating);
           this.model.addMarker(this.currentMarker);
           this.view.hideForm();

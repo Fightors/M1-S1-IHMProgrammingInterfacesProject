@@ -41,22 +41,34 @@ class View {
   }
 
   getInfoWindowContent(name, photoUrls, description, rating, isFavorite) {
-    const favoriteText = isFavorite ? 'Supprimer des favoris' : 'Ajouter aux favoris';
-    const photoHtml = photoUrls.length > 0 ? `<img src="${photoUrls[0]}" alt="${name}" id="spot-photo">` : '';
-    const photoNavigation = photoUrls.length > 1 ? `
-      <button id="prev-photo">&lt;</button>
-      <button id="next-photo">&gt;</button>
-    ` : '';
+    let carouselItems = photoUrls.map((url, index) => `
+      <div class="carousel-item ${index === 0 ? 'active' : ''}">
+        <img src="${url}" class="d-block w-100" alt="Photo ${index + 1}">
+      </div>
+    `).join('');
+  
+    const starRating = this.generateStarRating(rating);
+    const favoriteButtonText = isFavorite ? 'Supprimer de mes favoris' : 'Ajouter à mes favoris';
+  
     return `
-      <div class="info-window-content">
+      <div>
         <h3>${name}</h3>
-        <div id="photo-container">
-          ${photoHtml}
-          ${photoNavigation}
+        <div id="photo-carousel" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            ${carouselItems}
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#photo-carousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#photo-carousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
         </div>
-        <p>${description}</p>
-        <div class="stars">${this.getStarsHTML(rating)}</div>
-        <p><a href="#" class="favorite-link">${favoriteText}</a></p>
+        <p class="spot-description">${description}</p>
+        <p class="spot-rating">Note globale: ${starRating}</p>
+        <button class="favorite-link">${favoriteButtonText}</button>
       </div>
     `;
   }
@@ -70,6 +82,18 @@ class View {
       ${'<span class="fa fa-star-half-alt checked"></span>'.repeat(halfStar)}
       ${'<span class="fa fa-star"></span>'.repeat(emptyStars)}
     `;
+  }
+
+  generateStarRating(rating) {
+    let stars = '';
+    for (let i = 1; i <= 5; i++) {
+      if (i <= rating) {
+        stars += '<span class="fa fa-star checked"></span>';
+      } else {
+        stars += '<span class="fa fa-star"></span>';
+      }
+    }
+    return stars;
   }
 
   initStarRating() {

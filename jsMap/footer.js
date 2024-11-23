@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         <div class="container">
           <div class="row text-center">
             <div class="col">
-              <a href="index.html" class="text-dark">
+              <a href="map.html" class="text-dark">
                 <i class="fas fa-map-pin"></i>
                 <p>Carte</p>
               </a>
