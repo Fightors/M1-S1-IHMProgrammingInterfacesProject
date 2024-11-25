@@ -1,0 +1,165 @@
+/* Style global du body */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0; /* Colle aux bords de la fenêtre */
+    display: flex; 
+    flex-direction: column;
+    height: 100vh;
+}
+
+/*=============================================*/
+/* Styles Header */
+.header-container {
+    display: table;
+    width: 100%; 
+    height: 100%;
+    table-layout: fixed;
+    background-color: #1f44d8;
+}
+
+/* Cases latérales du Header */
+.header-side {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: left;
+    width: 20%;
+    padding-left: 1%;
+}
+
+/* Image Logo */
+.header-logo {
+    height: 50px;
+    margin: 10px 0;
+    cursor: pointer;
+}
+
+/* Case centrale du Header */
+.header-center {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.header-text {
+    font-size: 26px;
+    color: white;
+}
+
+/*=============================================*/
+/* Styles Main */
+main {
+    flex: 1; /* Prend tout l'espace disponible sur la page */
+    padding: 20px;
+    text-align: center;
+}
+
+/* Styles Step 1 */
+/* Tableau d'images de sportifs */
+.images-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Espacement entre les images */
+    margin-bottom: 20px;
+}
+
+.row img {
+    max-width: 250px;
+    height: 200px;
+    object-fit: cover; /* Eviter déformation de l'image */
+    border-radius: 5px;
+}
+
+/* Logo centré */
+.logo img {
+    width: 500px;
+    margin: 20px 0;
+}
+
+/* Styles Step 2 */
+h3 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Style du tableau de sports */
+table {
+    width: 100%;
+    margin-top: 10px;
+    border-collapse: collapse;
+}
+
+/* Style des cases du tableau */
+td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Style des cases cliquables */
+.sport-cell {
+    padding: 15px;
+    text-align: center;
+    border: 1px solid #ddd;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.sport-cell:hover { 
+    background-color: #d0d0ff; 
+}
+
+/* Styles quand les cases sont cliquées */
+.sport-cell.selected {
+    background-color: #007BFF;
+    color: white;
+    font-weight: bold;
+}
+
+.sport-cell.selected:hover {
+    background-color: #0059ee;
+}
+
+/* Tableau des sports sélectionnés */
+
+#selected-sports ul {
+    margin: 0;
+    padding: 0;
+}
+
+#selected-sports li {
+    padding: 5px 0;
+    font-size: 16px;
+}
+
+/*=============================================*/
+/* Styles Footer */
+footer {
+    background-color: #1f44d8;
+    text-align: center;
+    padding: 10px;
+}
+
+/* Style des boutons généraux */
+button {
+    padding: 15px 30px; 
+    font-size: 22px; 
+    background-color: #0e32a0; 
+    border-color: white;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease; /* Transition ralentie quand hover */
+    margin: 5px 0;
+}
+
+button:hover {
+    background-color: #01197d;
+    transform: translateY(-2px);
+}
