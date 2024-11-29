@@ -26,10 +26,10 @@ Les pages sont reliées entre elles par des **liens directs** (navigation hypert
 - M1 ATAL
 
 ### Contributions individuelles
-- **Page index :** [Malo LE GALLIC]  
-- **Page map** [Théotime GODEFROY]  
-- **Page favorites** [Lucas BOCQUENÉ]  
-- **Page about** [Enzo BOTANS]  
+- **Page index :** Malo LE GALLIC
+- **Page map** Théotime GODEFROY
+- **Page favorites** Lucas BOCQUENÉ
+- **Page about** Enzo BOTANS
 
 ---
 
