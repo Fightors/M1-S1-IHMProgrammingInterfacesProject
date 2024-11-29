@@ -27,9 +27,9 @@ Les pages sont reliées entre elles par des **liens directs** (navigation hypert
 
 ### Contributions individuelles
 - **Page index :** Malo LE GALLIC
-- **Page map** Théotime GODEFROY
-- **Page favorites** Lucas BOCQUENÉ
-- **Page about** Enzo BOTANS
+- **Page map :** Théotime GODEFROY
+- **Page favorites :** Lucas BOCQUENÉ
+- **Page about :** Enzo BOTANS
 
 ---
 
