@@ -35,7 +35,12 @@ Les pages sont reliées entre elles par des **liens directs** (navigation hypert
 
 ## Démarrage rapide
 ### Instructions pour naviguer sur le site :
-1. **Télécharger le dossier compresser sur madoc**  
-2. **Décompresser le dossier compresser**  
+1. **Télécharger le dossier compressé**  
+2. **Décompresser le dossier compressé**  
 3. **Ouvrir index.html dans un navigateur web**
+
+### Fonctionnalités
+- Toutes les fonctionnalités possibles sont visibles et intuitives hormis celles de la map qui se basent sur la carte intéractive
+- Pour ajouter un spot sur la map : clique gauche
+- Pour consulter un spot sur la map : clique gauche sur le spot
 
